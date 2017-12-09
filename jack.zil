@@ -90,11 +90,15 @@ by Jack Welch"
 					<MOVE ,BEAN ,PLAYER>
 				)
 				(<PRSO? ,TURD>
-					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, Victor swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this godforsaken miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
+					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, the barbarian swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this godforsaken miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
 					<REMOVE ,TURD>
 					<MOVE ,COW ,PLAYER>
 				)
 			>
+		)
+		(
+		<VERB? TALK>
+			<TELL "\"You got stuff to trade? Give it to me. Then I give you stuff. Then you leave. That's how it works.\"" CR>
 		)
 	>
 >
@@ -123,6 +127,15 @@ by Jack Welch"
 	(ADJECTIVE ORANGE)
 	(LDESC "A doddering ogre, covered in cheddar powder and sporting a bad comb over, stands just outside the gilded doors of the casino.")
 	(FLAGS PERSONBIT)
+	(ACTION OGRE-R)
+>
+
+<ROUTINE OGRE-R ()
+	<COND 
+		(<VERB? GIVE>
+			<TELL "\"Keep your stinky old " D ,PRSO ", I don't want it. Germs. So sad.\"" CR>
+		)
+	>
 >
 
 <OBJECT FLOCK
@@ -261,5 +274,19 @@ by Jack Welch"
 	(ADJECTIVE HUMONGOUS GREEN)
 	(FDESC "A humongous green beanstalk with broad, leathery leaves reaches up through the clouds.")
 	(LDESC "The beanstalk towers over your farm and for that matter, the town as well.")
+	(ACTION BEAN-STALK-R)
 >
+
+<ROUTINE BEAN-STALK-R ()
+	<COND 
+		(<VERB? CLIMB> 
+			<DO-WALK P?UP>
+		)
+	>
+>
+
+
+
+
+
 
