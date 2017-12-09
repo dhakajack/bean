@@ -1,2 +1,2 @@
 # bean
-A short demo game in ZIL
+A short game so I can play around with ZIL.
