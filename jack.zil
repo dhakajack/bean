@@ -93,7 +93,7 @@ by Jack Welch"
 			<TELL "Thanks to years of malnutrition, the stunted cow is the size of a chihuahua." CR>
 		)
 		(<VERB? DROP>
-			<TELL "As the diminutive cow lands, she emits a yappy \"moo\"." CR>
+			<TELL "As the diminutive cow lands on her spindly legs, she emits a yappy \"moo\"." CR>
 			<MOVE ,COW ,HERE>
 		)
 	>
