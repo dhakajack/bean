@@ -56,6 +56,14 @@ by Jack Welch"
 	(UP PER BEANPOLE)
 	(FLAGS LIGHTBIT)>
 	
+<OBJECT GARMINGO
+	(DESC "Victor Garmingo")
+	(SYNONYM VICTOR GARMINGO)
+	(IN PAWNSHOP)
+	(LDESC "Greasy and perpetually hung over, Victor stands behind a counter, brimming with avarice.")
+	(FLAGS PERSONBIT NARTICLEBIT)
+>	
+	
 <ROOM CASINO
 	(DESC "Cloud Nine Casino and Resort")
 	(IN ROOMS)
@@ -69,7 +77,24 @@ by Jack Welch"
 	(LDESC "A lush and rambling golf course with a red-carpeted cloud-top path leading west to the casino. Off to the east, the golf course is surrounded by luscious cumulus clouds.")
 	(WEST TO CASINO)
 	(EAST PER PLUMMET)
+	(DOWN SORRY "The incredibly vigorous lawn must have grown back over the spot where you had climbed up from the beanstalk. You can no longer find that spot.")
 	(FLAGS LIGHTBIT)
+>
+
+<OBJECT BOUNCER
+	(DESC "bouncer")
+	(SYNONYM BOUNCER)
+	(IN CASINO)
+	(LDESC "A muscle-bound oaf stands in front of the casino, his arms barely able to fold across this heaving chest.")
+	(FLAGS PERSONBIT)
+>
+
+<OBJECT OGRE
+	(DESC "orange ogre")
+	(SYNONYM OGRE)
+	(ADJECTIVE ORANGE)
+	(LDESC "An doddering ogre, covered in cheddar powder and sporting a bad comb over, stands just outside the gilded doors of the casino.")
+	(FLAGS PERSONBIT)
 >
 
 <OBJECT FLOCK
@@ -99,11 +124,7 @@ by Jack Welch"
 		)
 	>
 >	
-	
-	
-	
-	
-	
+		
 <ROUTINE FLOCK-R ()
 	<COND 
 		(<VERB? EXAMINE> 
@@ -136,7 +157,7 @@ by Jack Welch"
     (ADJECTIVE TINY SMALL DIMINUTIVE MINUSCULE)
     (IN FARM)
 	(FLAGS TAKEBIT)
-	(LDESC "Accustomed to starvation, the jittery cow stares unblinkingly at the barren ground.")
+	(LDESC "Accustomed to starvation, the jittery cow stares unblinkingly into space.")
     (FDESC "Bessy the cow anxiously chews her last wad of cud.")
 	(ACTION COW-R)
 >
