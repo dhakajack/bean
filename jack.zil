@@ -60,9 +60,29 @@ by Jack Welch"
 	(DESC "Victor Garmingo")
 	(SYNONYM VICTOR GARMINGO)
 	(IN PAWNSHOP)
-	(LDESC "Greasy and perpetually hung over, Victor stands behind a counter, brimming with avarice.")
+	(LDESC "Greasy and perpetually hung over, the proprietor of the pawnshop, Victor Garmingo, stands behind a counter and brims with avarice.")
 	(FLAGS PERSONBIT NARTICLEBIT)
->	
+	(ACTION GARMINGO-R)
+>
+
+<ROUTINE GARMINGO-R ()
+	<COND
+		(<VERB? GIVE>
+			<COND
+				(<PRSO? ,COW>
+					<TELL "Victor looks sideways at the pint-sized cow.||\"Kind of scrawny, but I'll take it. Let's see. Here, take one of these. Now scram.\"||He hands you a somewhat shriveled but vaguely magical legume." CR>
+					<REMOVE ,COW>
+					<MOVE ,BEAN ,PLAYER>
+				)
+				(<PRSO? ,TURD>
+					<TELL "Victor takes the goose turd and hands back your cow." CR >
+					<REMOVE ,TURD>
+					<MOVE ,COW ,PLAYER>
+				)
+			>
+		)
+	>
+>
 	
 <ROOM CASINO
 	(DESC "Cloud Nine Casino and Resort")
@@ -77,7 +97,7 @@ by Jack Welch"
 	(LDESC "A lush and rambling golf course with a red-carpeted cloud-top path leading west to the casino. Off to the east, the golf course is surrounded by luscious cumulus clouds.")
 	(WEST TO CASINO)
 	(EAST PER PLUMMET)
-	(DOWN SORRY "The incredibly vigorous lawn must have grown back over the spot where you had climbed up from the beanstalk. You can no longer find that spot.")
+	(DOWN SORRY "You can't find the spot where you had climbed up from the beanstalk. The incredibly vigorous lawn must have grown back over the hole.")
 	(FLAGS LIGHTBIT)
 >
 
@@ -103,6 +123,14 @@ by Jack Welch"
 	(IN GOLF-COURSE)
 	(DESCFCN FLOCK-DESC-F)
 	(ACTION FLOCK-R)
+>
+
+<OBJECT TURD
+	(DESC "goose turd")
+	(SYNONYM TURD)
+	(ADJECTIVE GOOSE)
+	(IN GOLF-COURSE)
+	(FLAGS TAKEBIT)
 >
 
 <ROUTINE FLOCK-DESC-F (RARG)
@@ -181,7 +209,6 @@ by Jack Welch"
 >
 		
 <OBJECT BEAN
-	(IN PAWNSHOP)
 	(DESC "magic bean")
 	(SYNONYM BEAN)
 	(ADJECTIVE MAGIC)
@@ -220,6 +247,3 @@ by Jack Welch"
 	(LDESC "The beanstalk towers over your farm and for that matter, the town as well.")
 >
 	
-
-	
-
