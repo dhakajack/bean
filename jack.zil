@@ -70,6 +70,14 @@ by Jack Welch"
 	(EAST PER PLUMMET)
 	(FLAGS LIGHTBIT)
 >
+
+<OBJECT FLOCK
+	(DESC "flock of geese")
+	(SYNONYM FLOCK GEESE BIRDS)
+	(IN GOLF-COURSE)
+	(LDESC "The geese go about their business (in every sense), ignoring you.")
+	(FDESC "A flock a geese graze on the lush, well-manicured lawn.")
+>
 	
 <ROUTINE PLUMMET ()
 	<TELL "As there are no safety nets in the kingdom, you fall through the fluffy clouds and land right where you started: in the dirt." CR CR >
