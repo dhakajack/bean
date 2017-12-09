@@ -75,10 +75,31 @@ by Jack Welch"
 	(DESC "flock of geese")
 	(SYNONYM FLOCK GEESE BIRDS)
 	(IN GOLF-COURSE)
-	(LDESC "The geese go about their business (in every sense), ignoring you.")
 	(FDESC "A flock a geese graze on the lush, well-manicured lawn.")
 	(FLAGS FLEDBIT)
+	(ACTION FLOCK-R)
 >
+
+<ROUTINE FLOCK-R ()
+	<COND 
+		(<VERB? EXAMINE> 
+			<COND
+				(<IN? ,COW ,GOLF-COURSE>
+					<TELL "From their position of safety on the cloud bank to the east, the">
+				)
+				(<NOT<IN? ,COW ,GOLF-COURSE>>
+					<TELL "The">
+				)
+			>
+			<TELL " geese go about their business (in every sense), ignoring you." CR>
+			<RTRUE>
+		)
+		(T
+			<TELL "Perched on an insubstantial cloud bank, the geese are safely beyond your grasp (and Bessy's slavering maw)." CR >
+		)
+	>
+>
+
 	
 <ROUTINE PLUMMET ()
 	<TELL "As there are no safety nets in the kingdom, you fall through the fluffy clouds and land right where you started: in the dirt." CR CR >
@@ -105,10 +126,12 @@ by Jack Welch"
 			<TELL "As the diminutive cow lands on her spindly legs, she emits a yappy \"moo\"." CR>
 			<MOVE ,COW ,HERE>
 			<COND
-				(<IN? ,FLOCK ,GOLF-COURSE>
+				(<IN? ,COW ,GOLF-COURSE>
 				 	<TELL CR "Driven by the sort of blood lust that one rarely sees in cows, Bessy rips across the lawn after the geese. The geese erupt into flight and settle a short distance away on a cloud bank. From that safe harbor, they honk mockingly at Bessy, who stands at the very edge of the lawn vibrating with anger and yapping madly at them." CR>	
+				<FSET ,FLOCK ,FLEDBIT>
 				)
 			>
+			<RTRUE>	
 		)
 	>
 >
