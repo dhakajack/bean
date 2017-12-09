@@ -135,6 +135,17 @@ by Jack Welch"
 		(<VERB? GIVE>
 			<TELL "\"Keep your stinky old " D ,PRSO ", I don't want it. Germs. So sad.\"" CR>
 		)
+		(<VERB? TALK>
+			<COND
+				(<IN? ,COW ,GOLF-COURSE>
+					<TELL "Come back when you have made the sort of deal that I would." CR>
+					<RTRUE>
+				)
+				(T
+					<TELL "Get those geese off my lawn and we can talk about your future." CR>
+				)
+			>
+		)
 	>
 >
 
@@ -189,7 +200,14 @@ by Jack Welch"
 			<RTRUE>
 		)
 		(T
-			<TELL "Perched on an insubstantial cloud bank, the geese are safely beyond your grasp (and Bessy's slavering maw)." CR >
+			<COND
+				(<IN? ,COW ,GOLF-COURSE>
+					<TELL "Perched on an insubstantial cloud bank, the geese are safely beyond your grasp (and Bessy's slavering maw)." CR >
+				)
+				(T
+					<TELL "The geese flutter about you contemptuously." CR>
+				)
+			>
 		)
 	>
 >
