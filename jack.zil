@@ -76,23 +76,46 @@ by Jack Welch"
 	(DESC "flock of geese")
 	(SYNONYM FLOCK GEESE BIRDS)
 	(IN GOLF-COURSE)
-	(FDESC "A flock a geese graze on the lush, well-manicured lawn.")
-	(FLAGS FLEDBIT)
+	(DESCFCN FLOCK-DESC-F)
 	(ACTION FLOCK-R)
 >
 
+<ROUTINE FLOCK-DESC-F (RARG)
+	<COND 
+		(<EQUAL? .RARG ,M-OBJDESC?>
+			<RTRUE>
+		)
+		(T
+			<TELL "Some immigrant geese ">
+			<COND
+				(<IN? ,COW ,GOLF-COURSE>
+					<TELL "cluck and bristle with indignity from atop the neighboring clouds, while they keep a suspicious eye on your cow." CR>
+					<RTRUE>
+				)
+				(T
+					<TELL "wander the carefully tended lawn brazenly." CR>
+				)
+			>	
+		)
+	>
+>	
+	
+	
+	
+	
+	
 <ROUTINE FLOCK-R ()
 	<COND 
 		(<VERB? EXAMINE> 
 			<COND
 				(<IN? ,COW ,GOLF-COURSE>
-					<TELL "From their position of safety on the cloud bank to the east, the">
+					<TELL "From their position of safety on the cloud bank to the east">
 				)
 				(<NOT<IN? ,COW ,GOLF-COURSE>>
-					<TELL "The">
+					<TELL "Lounging about on the lush, well-manicured lawn">
 				)
 			>
-			<TELL " geese go about their business (in every sense), ignoring you." CR>
+			<TELL ", the geese go about their business (in every sense), ignoring you." CR>
 			<RTRUE>
 		)
 		(T
@@ -129,7 +152,6 @@ by Jack Welch"
 			<COND
 				(<IN? ,COW ,GOLF-COURSE>
 				 	<TELL CR "Driven by the sort of blood lust that one rarely sees in cows, Bessy rips across the lawn after the geese. The geese erupt into flight and settle a short distance away on a cloud bank. From that safe harbor, they honk mockingly at Bessy, who stands at the very edge of the lawn vibrating with anger and yapping madly at them." CR>	
-				<FSET ,FLOCK ,FLEDBIT>
 				)
 			>
 			<RTRUE>	
