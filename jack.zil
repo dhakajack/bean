@@ -26,8 +26,12 @@ by Jack Welch"
 
 "Objects"
 
-<GLOBAL GOALS 0>
+<SYNTAX TALK TO OBJECT = V-TALK>
+<SYNTAX TALK OBJECT (FIND PERSONBIT) = V-TALK>
 
+<ROUTINE V-TALK ()
+	<TELL "You strike up a a conversation. " T ,PRSO " seems be happy to talk to you." CR>
+>
 
 <ROOM FARM
     (DESC "The Family Farm")
@@ -250,4 +254,4 @@ by Jack Welch"
 	(FDESC "A humongous green beanstalk with broad, leathery leaves reaches up through the clouds.")
 	(LDESC "The beanstalk towers over your farm and for that matter, the town as well.")
 >
-	
+
