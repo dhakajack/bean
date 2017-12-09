@@ -53,6 +53,7 @@ by Jack Welch"
     (IN ROOMS)
     (LDESC "On the seedier side of town, the windows of the pawn shop are plastered with signs: Paychecks Cashed, BUY AND SELL GOLD, Top Price for Cows! Your farm is back to the east.")
     (EAST TO FARM)
+	(UP PER BEANPOLE)
 	(FLAGS LIGHTBIT)>
 	
 <ROOM CASINO
@@ -152,9 +153,18 @@ by Jack Welch"
 			<TELL "You shortsightedness would be applauded by those in charge of the kingdom, but you realize that if you ate the bean, you and your mom would have no crop come harvest time and that would be the end of your farm." CR>
 		)
 		(<VERB? DROP> 
-			<TELL "When the bean hits the soil it burrows in furiously, ejecting dirt in all directions. After a moment, the ground shakes and a massive beanstalks shoots upward." CR>
-			<REMOVE ,BEAN>
-			<MOVE ,BEAN-STALK ,FARM>
+			<COND
+				(<EQUAL? ,FARM ,HERE>
+					<TELL "When the bean hits the soil it burrows in furiously, ejecting dirt in all directions. After a moment, the ground shakes and a massive beanstalks shoots upward." CR>
+					<REMOVE ,BEAN>
+					<MOVE ,BEAN-STALK ,FARM>
+					<RTRUE>
+				)
+				(T
+					<TELL "The bean lands on the concrete floor and just sort of lays there unimpressively." CR>
+					<MOVE ,BEAN ,HERE>
+				)
+			>	
 		)
 	>
 >
