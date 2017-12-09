@@ -26,6 +26,9 @@ by Jack Welch"
 
 "Objects"
 
+<GLOBAL GOALS 0>
+
+
 <ROOM FARM
     (DESC "The Family Farm")
     (IN ROOMS)
@@ -75,7 +78,7 @@ by Jack Welch"
 					<MOVE ,BEAN ,PLAYER>
 				)
 				(<PRSO? ,TURD>
-					<TELL "Victor takes the goose turd and hands back your cow." CR >
+					<TELL "Victor looks at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, Victor swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this godforsaken miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
 					<REMOVE ,TURD>
 					<MOVE ,COW ,PLAYER>
 				)
@@ -101,19 +104,12 @@ by Jack Welch"
 	(FLAGS LIGHTBIT)
 >
 
-<OBJECT BOUNCER
-	(DESC "bouncer")
-	(SYNONYM BOUNCER)
-	(IN CASINO)
-	(LDESC "A muscle-bound oaf stands in front of the casino, his arms barely able to fold across this heaving chest.")
-	(FLAGS PERSONBIT)
->
-
 <OBJECT OGRE
 	(DESC "orange ogre")
 	(SYNONYM OGRE)
+	(IN CASINO)
 	(ADJECTIVE ORANGE)
-	(LDESC "An doddering ogre, covered in cheddar powder and sporting a bad comb over, stands just outside the gilded doors of the casino.")
+	(LDESC "A doddering ogre, covered in cheddar powder and sporting a bad comb over, stands just outside the gilded doors of the casino.")
 	(FLAGS PERSONBIT)
 >
 
@@ -204,6 +200,14 @@ by Jack Welch"
 				)
 			>
 			<RTRUE>	
+		)
+		(<VERB? TAKE>
+			<COND
+				(<IN? ,COW ,GOLF-COURSE>
+					<TELL "Now obsessed with her mortal enemies, the geese, Bessy snaps at you menacingly as you attempt to grab her. Since you value your hands, you let the murderous cow be. She growls at the birds, her rage barely contained." CR >
+					<RTRUE>
+				)
+			>
 		)
 	>
 >
