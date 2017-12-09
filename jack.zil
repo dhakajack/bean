@@ -240,6 +240,7 @@ by Jack Welch"
 			<COND
 				(<IN? ,COW ,GOLF-COURSE>
 				 	<TELL CR "Driven by the sort of blood lust that one rarely sees in cows, Bessy rips across the lawn after the geese. The geese erupt into flight and settle a short distance away on a cloud bank. From that safe harbor, they honk mockingly at Bessy, who stands at the very edge of the lawn vibrating with anger and yapping madly at them." CR>	
+					<MOVE ,MOM ,FARM>
 				)
 			>
 			<RTRUE>	
@@ -254,6 +255,34 @@ by Jack Welch"
 		)
 	>
 >
+
+<OBJECT MOM
+	(DESC "your mom")
+	(SYNONYM MOM MOTHER)
+	(ADJECTIVE MY YOUR)
+	(FLAGS NARTICLEBIT POOPBIT)
+	(FDESC "You haven't seen your mom out of her sick bed in years, but there she is carving furrows in the soil with the stub of a twisted stick, literally scratching out a meager existence.")
+	(ACTION MOM-R)
+>
+
+<ROUTINE MOM-R ()
+	<COND
+		(<VERB? TAKE>
+			<TELL "You pick her up like a bundle of kindling." CR>
+			<MOVE ,MOM ,PLAYER>
+			<RTRUE>
+		)
+		(<VERB? DROP>
+			<TELL "Your mom complains under her breath as you set her down a bit too abruptly." CR>
+			<MOVE ,MOM ,HERE>
+			<RTRUE>
+		)
+		(<VERB? TALK>
+			<TELL "It rained goose poop, she says.CR">
+		)
+	>
+>	
+	
 		
 <OBJECT BEAN
 	(DESC "magic bean")
