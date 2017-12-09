@@ -77,6 +77,7 @@ by Jack Welch"
 	(IN GOLF-COURSE)
 	(LDESC "The geese go about their business (in every sense), ignoring you.")
 	(FDESC "A flock a geese graze on the lush, well-manicured lawn.")
+	(FLAGS FLEDBIT)
 >
 	
 <ROUTINE PLUMMET ()
@@ -90,8 +91,8 @@ by Jack Welch"
     (ADJECTIVE TINY SMALL DIMINUTIVE MINUSCULE)
     (IN FARM)
 	(FLAGS TAKEBIT)
-	(LDESC "Accustomed to starvation, the cow stares unblinkingly at the barren ground.")
-    (FDESC "Bessy the cow chews her last wad of cud.")
+	(LDESC "Accustomed to starvation, the jittery cow stares unblinkingly at the barren ground.")
+    (FDESC "Bessy the cow anxiously chews her last wad of cud.")
 	(ACTION COW-R)
 >
 	
@@ -103,6 +104,11 @@ by Jack Welch"
 		(<VERB? DROP>
 			<TELL "As the diminutive cow lands on her spindly legs, she emits a yappy \"moo\"." CR>
 			<MOVE ,COW ,HERE>
+			<COND
+				(<IN? ,FLOCK ,GOLF-COURSE>
+				 	<TELL CR "Driven by the sort of blood lust that one rarely sees in cows, Bessy rips across the lawn after the geese. The geese erupt into flight and settle a short distance away on a cloud bank. From that safe harbor, they honk mockingly at Bessy, who stands at the very edge of the lawn vibrating with anger and yapping madly at them." CR>	
+				)
+			>
 		)
 	>
 >
