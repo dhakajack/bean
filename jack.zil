@@ -30,7 +30,15 @@ by Jack Welch"
 <SYNTAX TALK OBJECT (FIND PERSONBIT) = V-TALK>
 
 <ROUTINE V-TALK ()
-	<TELL "You strike up a a conversation. " T ,PRSO " seems be happy to talk to you." CR>
+	<COND
+		(<FSET? ,PRSO ,PERSONBIT>
+			<TELL "You have a nice chat with " T ,PRSO ", who seems be happy to talk to you." CR>
+			<RTRUE>
+		)
+		(T
+			<TELL "You didn't really expect to have a conversation with " A ,PRSO "." CR>
+		)
+	>
 >
 
 <ROOM FARM
@@ -63,26 +71,26 @@ by Jack Welch"
 	(UP PER BEANPOLE)
 	(FLAGS LIGHTBIT)>
 	
-<OBJECT GARMINGO
-	(DESC "Victor Garmingo")
-	(SYNONYM VICTOR GARMINGO)
+<OBJECT YAGMAR
+	(DESC "Yagmar")
+	(SYNONYM YAGMAR BARBARIAN)
 	(IN PAWNSHOP)
-	(LDESC "Greasy and perpetually hung over, the proprietor of the pawnshop, Victor Garmingo, stands behind a counter and brims with avarice.")
+	(LDESC "Greasy and perpetually hung over, the proprietor of the pawnshop, Yagmar the Barbarian, stands behind a counter and brims with avarice.")
 	(FLAGS PERSONBIT NARTICLEBIT)
-	(ACTION GARMINGO-R)
+	(ACTION YAGMAR-R)
 >
 
-<ROUTINE GARMINGO-R ()
+<ROUTINE YAGMAR-R ()
 	<COND
 		(<VERB? GIVE>
 			<COND
 				(<PRSO? ,COW>
-					<TELL "Victor looks sideways at the pint-sized cow.||\"Kind of scrawny, but I'll take it. Let's see. Here, take one of these. Now scram.\"||He hands you a somewhat shriveled but vaguely magical legume." CR>
+					<TELL "Yagmar looks sideways at the pint-sized cow.||\"Kind of scrawny, but I'll take it. Let's see. Here, take one of these. Now scram.\"||He hands you a somewhat shriveled but vaguely magical legume." CR>
 					<REMOVE ,COW>
 					<MOVE ,BEAN ,PLAYER>
 				)
 				(<PRSO? ,TURD>
-					<TELL "Victor looks at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, Victor swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this godforsaken miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
+					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, Victor swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this godforsaken miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
 					<REMOVE ,TURD>
 					<MOVE ,COW ,PLAYER>
 				)
