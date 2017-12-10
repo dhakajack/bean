@@ -204,7 +204,7 @@ by Jack Welch"
 <ROUTINE ENTER-CASINO ()
 	<COND
 		(<IN? ,SUIT ,PLAYER>
-			<JIGS-UP "Having impressed the ogre by literally selling your own mother, you walk triumphantly towards the casino. A smartly dressed steward come out to greet you and leads you towards the building.||But he keeps walking. Around the entrance to the game floor, back behind the parking ramp, down past the laundry area, and finally in a rusty door behind the hotel.||\"Congratulations,\" he says gleefully, handing you a dish towel, \"and welcome to senior management.\"||A tower of dirty dishes looms next to you, tilting precariously alongside an industrial sized sink fully of opaque, gray water in the steam hotel kitchen.">
+			<JIGS-UP "Having impressed the ogre by literally selling your own mother, you walk triumphantly towards the casino. A smartly dressed steward comes out to greet you and leads you towards the building.||But he keeps walking. Around the entrance to the game floor, back behind the parking ramp, down past the laundry area, and finally in a rusty door behind the hotel.||\"Congratulations,\" he says gleefully, handing you a dish towel, \"and welcome to senior management.\"||A tower of dirty dishes looms next to you, tilting precariously alongside an industrial sized sink fully of opaque, gray water in the steamy hotel kitchen.">
 		)
 		(T
 			<TELL "The ogre refuses to let you enter, but gives you some advice." CR CR>
@@ -380,7 +380,7 @@ by Jack Welch"
 	(DESC "your mom")
 	(SYNONYM MOM MOTHER)
 	(ADJECTIVE MY YOUR)
-	(FLAGS NARTICLEBIT POOPBIT FEMALEBIT)
+	(FLAGS NARTICLEBIT FEMALEBIT)
 	(FDESC "You haven't seen your mom out of her sick bed in years, but there she is carving furrows in the soil with the stub of a twisted stick, literally scratching out a meager existence.")
 	(LDESC "Your mom is hunched over, knees deep in the loam, massaging the goose droppings into the soil with her raw hands.")
 	(ACTION MOM-R)
@@ -408,7 +408,7 @@ by Jack Welch"
 			<RTRUE>
 		)
 		(<VERB? TALK>
-			<TELL "It rained goose poop, she says." CR>
+			<TELL "She can't stop talking about how miraculous it is that just as she was praying for better crop yields, it began to rain fertilizer." CR>
 		)
 		(<VERB? EXAMINE>
 			<COND
