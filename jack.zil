@@ -1,4 +1,4 @@
-"Jack The Bean Stalker main file"
+"Jack's The Bean Stalker main file"
 
 <VERSION XZIP>
 <CONSTANT RELEASEID 1>
@@ -40,6 +40,29 @@ by Jack Welch"
 		)
 	>
 >
+
+<SYNTAX DIG = V-DIG>
+
+<ROUTINE V-DIG ()
+	<TELL "Digging is for ditches. You're a farmer, so you PLANT stuff." CR>
+>	
+
+<SYNTAX PLANT OBJECT = V-PLANT>
+<VERB-SYNONYM PLANT BURY SOW>
+
+<ROUTINE V-PLANT ()
+	<COND
+		(<EQUAL? ,PRSO ,BEAN>
+			<PERFORM ,V?DROP ,BEAN>
+			<RTRUE>
+		)
+		(T
+			<TELL "You're trying to plant " A ,PRSO "? Are you like *the* worst farmer ever?" CR>
+		)
+	>
+>
+
+
 
 <ROOM FARM
     (DESC "The Family Farm")
@@ -300,13 +323,13 @@ by Jack Welch"
 		(<VERB? DROP> 
 			<COND
 				(<EQUAL? ,FARM ,HERE>
-					<TELL "When the bean hits the soil it burrows in furiously, ejecting dirt in all directions. After a moment, the ground shakes and a massive beanstalks shoots upward." CR>
+					<TELL "When the bean touches the soil, it burrows in furiously, ejecting dirt in all directions. After a moment, the ground shakes and a massive beanstalk shoots upward." CR>
 					<REMOVE ,BEAN>
 					<MOVE ,BEAN-STALK ,FARM>
 					<RTRUE>
 				)
 				(T
-					<TELL "The bean lands on the concrete floor and just sort of lays there unimpressively." CR>
+					<TELL "The bean lays unimpressively on the concrete floor." CR>
 					<MOVE ,BEAN ,HERE>
 				)
 			>	
