@@ -87,6 +87,7 @@ by Jack Welch"
 	<TELL "This is a text adventure that I wrote while trying to get my head around ZIL one weekend in 2017.||Thanks to the folks at INFOCOM for ZIL and for that matter the Z-machine, and to Jesse McGrew for bringing ZIL back to life by creating the ZILF authoring tool." CR>
 >
 
+<VERB-SYNONYM GIVE SELL>
 
 <ROOM FARM
     (DESC "The Family Farm")
@@ -140,6 +141,12 @@ by Jack Welch"
 					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, the barbarian swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this godforsaken miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
 					<REMOVE ,TURD>
 					<MOVE ,COW ,PLAYER>
+				)
+				(<PRSO? ,MOM>
+					<TELL "Yagmar looks her over appraisingly, pokes at her a bit with a soup spoon, and shoves her in a sack.||\"Done and done,\" he says, rubbing his hands together. \"Haven't had one of these in a while, so tell you what I'm going to do.\"||He reaches around the back of the counter and pulls out a fine Italian three-piece suit with fine pinstripes. Very chic. Stunned, you try it on immediately. It fits to a tee. No one will ever mistake you for a lowly farm hand again, by God." CR>
+					<REMOVE ,MOM>
+					<MOVE ,SUIT ,PLAYER>
+					<FSET ,SUIT ,WORNBIT>
 				)
 			>
 		)
@@ -252,7 +259,6 @@ by Jack Welch"
 		)
 	>
 >
-
 		
 <ROUTINE FLOCK-R ()
 	<COND 
@@ -345,7 +351,7 @@ by Jack Welch"
 			<RTRUE>
 		)
 		(<VERB? DROP>
-			<TELL "Your mom complains under her breath as you set her down a bit too abruptly. She murmurs something to the effect that the farm work won't do itself and ">
+			<TELL "Your mom complains under her breath as you set her down a bit too abruptly.||She murmurs something to the effect that the farm work won't do itself and ">
 			<COND 
 				(<IN? ,MOM ,FARM>
 					<TELL "goes back churning the soil." CR>
@@ -421,8 +427,11 @@ by Jack Welch"
 	>
 >
 
-
-
-
-
-
+<OBJECT SUIT
+	(DESC "suit")
+	(SYNONYM SUIT)
+	(ADJECTIVE FANCY BUSINESS)
+	(LDESC "A fancy business suit, sharply tailored and top quality.")
+	(FLAGS WEARBIT TAKEBIT)
+>
+	
