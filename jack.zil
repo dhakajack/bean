@@ -262,6 +262,7 @@ by Jack Welch"
 	(ADJECTIVE MY YOUR)
 	(FLAGS NARTICLEBIT POOPBIT)
 	(FDESC "You haven't seen your mom out of her sick bed in years, but there she is carving furrows in the soil with the stub of a twisted stick, literally scratching out a meager existence.")
+	(LDESC "Your mother paces nervously, fretting about your family finances, too upset to talk.")
 	(ACTION MOM-R)
 >
 
@@ -270,6 +271,7 @@ by Jack Welch"
 		(<VERB? TAKE>
 			<TELL "You pick her up like a bundle of kindling." CR>
 			<MOVE ,MOM ,PLAYER>
+			<FSET ,MOM ,TOUCHBIT>
 			<RTRUE>
 		)
 		(<VERB? DROP>
@@ -278,7 +280,7 @@ by Jack Welch"
 			<RTRUE>
 		)
 		(<VERB? TALK>
-			<TELL "It rained goose poop, she says.CR">
+			<TELL "It rained goose poop, she says." CR>
 		)
 	>
 >	
