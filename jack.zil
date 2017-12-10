@@ -62,7 +62,22 @@ by Jack Welch"
 	>
 >
 
+<SYNTAX SIT ON OBJECT = V-PERCH>
+<SYNTAX GET ON OBJECT = V-PERCH>
+<SYNTAX STAND ON OBJECT = V-PERCH>
+<SYNTAX CLIMB ONTO OBJECT = V-PERCH>
+<SYNTAX CLIMB ON OBJECT = V-PERCH>
 
+<ROUTINE V-PERCH ()
+	<COND
+		(<AND <FSET? ,PRSO ,SURFACEBIT> <FSET? ,PRSO ,CONTBIT>>
+			<TELL "You are now on " T ,PRSO "." CR>
+		)
+		(T
+			<TELL "You can't get on " T ,PRSO ". " CR>
+		)
+	>
+>
 
 <ROOM FARM
     (DESC "The Family Farm")
@@ -121,11 +136,20 @@ by Jack Welch"
 		)
 		(
 		<VERB? TALK>
-			<TELL "\"You got stuff to trade? Give it to me. Then I give you stuff. Then you leave. That's how it works.\"" CR>
+			<TELL "\"" <PICK-ONE ,YAGMAR-BLAH> ".\"" CR>
 		)
 	>
 >
 
+<CONSTANT YAGMAR-BLAH
+	<LTABLE
+		2
+		"You got stuff to trade? Give it to me. Then I give you stuff. Then you leave. That's how it works"
+		"Are you just here to gab or do you have something to trade? I'm not getting any younger"
+		"I'm not here to jaw-wag, I'm here to trade. Got something? Give it. Don't got something? Go away"
+	>
+>
+	
 <OBJECT COUNTER
 	(DESC "counter")
 	(SYNONYM COUNTER)
@@ -138,6 +162,9 @@ by Jack Welch"
 	<COND
 		(<AND <VERB? PUT-ON> <EQUAL? ,PRSI ,COUNTER>>
 			<PERFORM ,V?GIVE ,PRSO ,YAGMAR>
+		)
+		(<VERB? PERCH>
+			<TELL "Yagmar backhands you and you go flying across the pawn shop.||\"Didn't your mother ever teach you any manners?\" asks the barbarian with contempt." CR>
 		)
 	>
 >
@@ -304,8 +331,7 @@ by Jack Welch"
 		)
 	>
 >	
-	
-		
+			
 <OBJECT BEAN
 	(DESC "magic bean")
 	(SYNONYM BEAN)
