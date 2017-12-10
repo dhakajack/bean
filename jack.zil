@@ -1,6 +1,6 @@
 "Jack The Bean Stalker main file"
 
-<VERSION ZIP>
+<VERSION XZIP>
 <CONSTANT RELEASEID 1>
 
 "Main loop"
@@ -13,7 +13,7 @@ by Jack Welch"
 <ROUTINE GO ()
     <CRLF> 
 	<CRLF>
-    <TELL "After the magical wall was erected around the kingdom, the cost of farm labor skyrocketed as workers from the enchanted forest and fairy prairie were no longer able to cross the border to find jobs. You and your mom were squeaking until she became sick. Unable to afford insurance, you have had to sell off your assets one by one to keep the farm going." CR CR "Now you are down to your final cow, good old Bessy." CR CR>
+    <TELL "After the magical wall was erected around the kingdom, the cost of farm labor skyrocketed as workers from the enchanted forest and fairy prairie were no longer able to cross the border to find jobs. You and your mom were squeaking by until she became sick. Unable to afford insurance, you have had to sell off your assets one by one to keep the farm going." CR CR "Now you are down to your final cow, good old Bessy." CR CR>
     <INIT-STATUS-LINE>
     <V-VERSION> <CRLF>
     <SETG HERE ,FARM>
