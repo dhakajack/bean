@@ -107,7 +107,7 @@ by Jack Welch"
 	(DESC "counter")
 	(SYNONYM COUNTER)
 	(IN PAWNSHOP)
-	(FLAGS SURFACEBIT CONTBIT NDESCBIT)
+	(FLAGS SURFACEBIT CONTBIT OPENBIT NDESCBIT)
 	(ACTION COUNTER-R)
 >
 
@@ -242,10 +242,10 @@ by Jack Welch"
 			>
 			<RTRUE>	
 		)
-		(<VERB? TAKE>
+		(<VERB? TAKE PUSH>
 			<COND
 				(<IN? ,COW ,GOLF-COURSE>
-					<TELL "Now obsessed with her mortal enemies, the geese, Bessy snaps at you menacingly as you attempt to grab her. Since you value your hands, you let the murderous cow be. She growls at the birds, her rage barely contained." CR >
+					<TELL "Now obsessed with her mortal enemies, the geese, Bessy snaps at you menacingly as you get near her. Since you value your hands, you let the murderous cow be. She growls at the birds, her rage barely contained." CR >
 					<RTRUE>
 				)
 			>
