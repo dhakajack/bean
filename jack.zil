@@ -161,6 +161,9 @@ by Jack Welch"
 		<VERB? TALK>
 			<TELL "\"" <PICK-ONE ,YAGMAR-BLAH> ".\"" CR>
 		)
+		(<VERB? EXAMINE>
+			<TELL "Seven foot four and 520 pounds. Obey." CR>
+		)	
 	>
 >
 
