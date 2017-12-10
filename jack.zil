@@ -17,6 +17,7 @@ by Jack Welch"
     <INIT-STATUS-LINE>
     <V-VERSION> <CRLF>
     <SETG HERE ,FARM>
+	<PUTP ,PLAYER ,P?LDESC "Downtrodden and grubby.">
     <MOVE ,PLAYER ,HERE>
     <V-LOOK>
     <MAIN-LOOP>
