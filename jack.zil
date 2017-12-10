@@ -145,7 +145,7 @@ by Jack Welch"
 					<MOVE ,BEAN ,PLAYER>
 				)
 				(<PRSO? ,TURD>
-					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, the barbarian swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this godforsaken miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
+					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, the barbarian swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this viscious miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
 					<REMOVE ,TURD>
 					<MOVE ,COW ,PLAYER>
 				)
@@ -264,6 +264,13 @@ by Jack Welch"
 		)
 		(<VERB? LICK>
 			<TELL "Unable to resist the allure of his cheesy, powdery coating, you lick the ogre.||A putrid flavor fills you mouth. While you spit repeated to try to get the taste out of your mouth, the ogre's tiny hands rub more of the orange powder over the patch of decaying flesh that you had licked clean." CR>
+		)
+		(<VERB? EXAMINE>
+			<TELL "The ogre stands awkwardly just outside the casino, trying to look important." CR>
+		)
+		(<VERB? ATTACK>
+			<TELL "A horde of dark-jacketed thugs with sunglasses descend on you and toss you towards the clouds before you can get near the ogre." CR CR>
+		 	<GOTO ,FARM>
 		)
 	>
 >
