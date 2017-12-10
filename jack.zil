@@ -204,16 +204,16 @@ by Jack Welch"
 <ROUTINE ENTER-CASINO ()
 	<COND
 		(<IN? ,SUIT ,PLAYER>
-			<TELL "You enter the casino. Yeah!" CR>
-			<JIGS-UP "They hand you a dish rag and tell you to get to work." >
+			<JIGS-UP "Having impressed the ogre by literally selling your own mother, you walk triumphantly towards the casino. A smartly dressed steward come out to greet you and leads you towards the building.||But he keeps walking. Around the entrance to the game floor, back behind the parking ramp, down past the laundry area, and finally in a rusty door behind the hotel.||\"Congratulations,\" he says gleefully, handing you a dish towel, \"and welcome to senior management.\"||A tower of dirty dishes looms next to you, tilting precariously alongside an industrial sized sink fully of opaque, gray water in the steam hotel kitchen.">
 		)
 		(T
-			<TELL "The ogre refuses to let you enter." CR>
+			<TELL "The ogre refuses to let you enter, but gives you some advice." CR CR>
+			<PERFORM ,V?TALK ,OGRE>
 			<RFALSE>
 		)
 	>
 >	
-	
+
 <ROOM GOLF-COURSE
 	(DESC "Golf Course")
 	(IN ROOMS)
@@ -242,11 +242,20 @@ by Jack Welch"
 		(<VERB? TALK>
 			<COND
 				(<IN? ,COW ,GOLF-COURSE>
-					<TELL "Come back when you have made the sort of deal that I would." CR>
-					<RTRUE>
+					<COND
+						(<FSET? ,SUIT ,WORNBIT>
+							<TELL "\"Hang on a minute,\" the ogre says, holding up a tiny finger as he talks into his cell phone. \"His own mother? Fantastic. Absolutely fantastic. He's here now. Talk later, Yagmar.\"||The ogre pats you on the head, leaving a orange powdery outline of his palm on your forehead. \"Just want to say, what you did, I am so, so impressed. Hugely. Impressed. You're one of us now, come right on in, just over there, to the west. See the door? To the casino? That way.\"" CR
+							>
+							<RTRUE>
+						)
+						(T
+							<TELL "\"You did well on the goose job, very, very well,\" the ogre confides with a wink. \" This might work out for you. It could be great. Tell you what, if you can show me that you can pull off the kind of deal that I would make myself, I'll not only let you into the casino, I'll hire you on the spot.\"" CR>
+							<RTRUE>
+						)
+					>
 				)
 				(T
-					<TELL "Get those geese off my lawn and we can talk about your future." CR>
+					<TELL "\"" <PICK-ONE ,GOOSE-BLAH> ".\""  CR>
 				)
 			>
 		)
@@ -255,6 +264,16 @@ by Jack Welch"
 		)
 	>
 >
+
+<CONSTANT GOOSE-BLAH
+	<LTABLE
+		2
+		"You want to do something useful? See those birds over there, pooping up my lawn? My very very wonderful, amazing -- I guarantee you, this is the best lawn. I was just saying the other day, this lawn is really something else. And what happens? Geese. Geese from over the border are all over my lawn. They're not our geese, they are taking lawn away from our geese. These are terrorist, radical terrorist geese, and I won't put up with it. These geese, did you know that's one than more goose, right? Anyhow, these geese have got to go. You get rid of them, and I promise you, I promise you that I will make things make things right. Now, go do something about them"
+		"Let me give you some advice, do you want some advice? Of course you do, you're saying, I wonder what advice he has to give me, and now I'm giving it to you, so you should listen because they say my advice is the best advice. I give the best advice, because when I am telling people things ,about advice, they all say, he has the best advice. So, my advice is that you get those birds, those horrible, they're not ducks, you know. Ducks are patriotic. There are television shows about ducks, and I saw one last week, so this is not at all about ducks. Those birds are geese, and I have had it up to here, right here, with them. So, if you get rid of them, then maybe we can talk"
+		"You want to come it? It's great isn't it. The big, most expensive casino ever. Great for families. I say bring the kids on in, never too early. Because we're all about family values. But not geese. Geese don't think like you are I do, and not because they're birds. I like birds, I love birds. Just the other day, I was talking to a flock of birds down by the pool, and they were all fine and one of them was like, you really like birds, don't you, and I do, but just not geese. Say, if you want to do something useful for your old orange ogre buddy, maybe I can do a little deal-making for you, try to get you in the door. So, why not just head over there and see if you can't get rid of those geese"
+	>
+>
+
 
 <OBJECT FLOCK
 	(DESC "flock of geese")
