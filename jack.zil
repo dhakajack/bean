@@ -143,17 +143,20 @@ by Jack Welch"
 					<TELL "Yagmar looks sideways at the pint-sized cow.||\"Kind of scrawny, but I'll take it. Let's see. Here, take one of these. Now scram.\"||He hands you a somewhat shriveled but vaguely magical legume." CR>
 					<REMOVE ,COW>
 					<MOVE ,BEAN ,PLAYER>
+					<INCREMENT-SCORE 10>
 				)
 				(<PRSO? ,TURD>
 					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, the barbarian swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this viscious miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
 					<REMOVE ,TURD>
 					<MOVE ,COW ,PLAYER>
+					<INCREMENT-SCORE 10>
 				)
 				(<PRSO? ,MOM>
 					<TELL "Yagmar looks her over appraisingly, pokes at her a bit with a soup spoon, and shoves her in a sack.||\"Done and done,\" he says, rubbing his hands together. \"Haven't had one of these in a while, so tell you what I'm going to do.\"||He reaches around the back of the counter and pulls out a fine Italian three-piece suit with fine pinstripes. Very chic. Stunned, you try it on immediately. It fits to a tee. No one will ever mistake you for a lowly farm hand again, by God." CR>
 					<REMOVE ,MOM>
 					<MOVE ,SUIT ,PLAYER>
 					<FSET ,SUIT ,WORNBIT>
+					<INCREMENT-SCORE 20>
 				)
 			>
 		)
@@ -207,7 +210,8 @@ by Jack Welch"
 <ROUTINE ENTER-CASINO ()
 	<COND
 		(<IN? ,SUIT ,PLAYER>
-			<JIGS-UP "Having impressed the ogre by literally selling your own mother, you walk triumphantly towards the casino. A smartly dressed steward comes out to greet you and leads you towards the building.||But he keeps walking. Around the entrance to the game floor, back behind the parking ramp, down past the laundry area, and finally in a rusty door behind the hotel.||\"Congratulations,\" he says gleefully, handing you a dish towel, \"and welcome to senior management.\"||A tower of dirty dishes looms next to you, tilting precariously alongside an industrial sized sink fully of opaque, gray water in the steamy hotel kitchen.">
+			<INCREMENT-SCORE 50>
+			<JIGS-UP "Having impressed the ogre by literally selling your own mother, you walk triumphantly towards the casino. A smartly dressed steward comes out to greet you and leads you towards the building.||But he keeps walking: around the entrance to the game floor, back behind the parking ramp, down past the laundry area, and finally into the hotel through a rusty door at the rear of the building.||\"Congratulations,\" he says gleefully, handing you a dish towel, \"and welcome to senior management.\"||A tower of dirty dishes looms next to you, tilting precariously alongside an industrial-sized sink fully of opaque, gray water in the steamy hotel kitchen.">
 		)
 		(T
 			<TELL "The ogre refuses to let you enter, but gives you some advice." CR CR>
@@ -371,6 +375,7 @@ by Jack Welch"
 				 	<TELL CR "Driven by the sort of blood lust that one rarely sees in cows, Bessy rips across the lawn after the geese. The geese erupt into flight and settle a short distance away on a cloud bank. From that safe harbor, they honk mockingly at Bessy, who stands at the very edge of the lawn vibrating with anger and yapping madly at them." CR>	
 					<PUTP ,FLOCK ,P?LDESC "The non-indigenous fowl cluck and bristle with indignity from atop the neighboring clouds, while they keep a suspicious eye on your cow.">
 					<MOVE ,MOM ,FARM>
+					<INCREMENT-SCORE 10>
 				)
 			>
 			<RTRUE>	
@@ -492,3 +497,6 @@ by Jack Welch"
 	(FLAGS WEARBIT TAKEBIT)
 >
 	
+<ROUTINE INCREMENT-SCORE (NUM)
+	<SETG SCORE <+ ,SCORE .NUM>>
+>
