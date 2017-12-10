@@ -80,6 +80,14 @@ by Jack Welch"
 	>
 >
 
+<SYNTAX HELP = V-HELP>
+<VERB-SYNONYM HELP HINT HINTS ABOUT CREDITS INFO>
+
+<ROUTINE V-HELP ()
+	<TELL "This is a text adventure that I wrote while trying to get my head around ZIL one weekend in 2017.||Thanks to the folks at INFOCOM for ZIL and for that matter the Z-machine, and to Jesse McGrew for bringing ZIL back to life by creating the ZILF authoring tool." CR>
+>
+
+
 <ROOM FARM
     (DESC "The Family Farm")
     (IN ROOMS)
