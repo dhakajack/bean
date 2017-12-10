@@ -465,7 +465,7 @@ by Jack Welch"
 	(SYNONYM BEANSTALK STALK)
 	(ADJECTIVE HUMONGOUS GREEN)
 	(FDESC "A humongous green beanstalk with broad, leathery leaves reaches up through the clouds.")
-	(LDESC "The beanstalk towers over your farm and for that matter, the town as well.")
+	(LDESC "The beanstalk towers over your farm and for that matter, the town as well.||Down the road, you expect you'll be getting some angry letters from the home owner's association.")
 	(ACTION BEAN-STALK-R)
 >
 
