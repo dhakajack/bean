@@ -234,11 +234,25 @@ by Jack Welch"
 
 <OBJECT TURD
 	(DESC "goose turd")
-	(SYNONYM TURD)
+	(SYNONYM TURD DROPPING)
 	(ADJECTIVE GOOSE)
 	(IN GOLF-COURSE)
 	(FLAGS TAKEBIT)
+	(ACTION TURD-R)
 >	
+
+
+<ROUTINE TURD-R ()
+	<COND 
+		(<VERB? EXAMINE>
+			<TELL "As goose droppings go, this is a fine one." CR>
+		)
+		(<VERB? EAT>
+			<TELL "The first few nibbles put you off." CR>
+		)
+	>
+>
+
 		
 <ROUTINE FLOCK-R ()
 	<COND 
@@ -260,7 +274,7 @@ by Jack Welch"
 					<TELL "Perched on an insubstantial cloud bank, the geese are safely beyond your grasp (and Bessy's slavering maw)." CR >
 				)
 				(T
-					<TELL "The geese flutter about you contemptuously." CR>
+					<TELL "The geese flutter about clearly avoiding you." CR>
 				)
 			>
 		)
@@ -318,7 +332,7 @@ by Jack Welch"
 	(ADJECTIVE MY YOUR)
 	(FLAGS NARTICLEBIT POOPBIT FEMALEBIT)
 	(FDESC "You haven't seen your mom out of her sick bed in years, but there she is carving furrows in the soil with the stub of a twisted stick, literally scratching out a meager existence.")
-	(LDESC "Your mother paces nervously, fretting about your family finances, too upset to talk.")
+	(LDESC "Your mom is hunched over, knees deep in the loam, massaging the goose droppings into the soil with her raw hands.")
 	(ACTION MOM-R)
 >
 
@@ -331,12 +345,30 @@ by Jack Welch"
 			<RTRUE>
 		)
 		(<VERB? DROP>
-			<TELL "Your mom complains under her breath as you set her down a bit too abruptly." CR>
-			<MOVE ,MOM ,HERE>
+			<TELL "Your mom complains under her breath as you set her down a bit too abruptly. She murmurs something to the effect that the farm work won't do itself and ">
+			<COND 
+				(<IN? ,MOM ,FARM>
+					<TELL "goes back churning the soil." CR>
+				)
+				(
+					<TELL "perhaps something about how little help you are what with your beanstalk growing, and she marches herself back to the farm." CR>
+					<MOVE ,MOM ,FARM>
+				)
+			>
 			<RTRUE>
 		)
 		(<VERB? TALK>
 			<TELL "It rained goose poop, she says." CR>
+		)
+		(<VERB? EXAMINE>
+			<COND
+				(<IN? ,MOM ,FARM>
+					<TELL "She seems to be doing a good job, although she isn't moving as quickly as she used to." CR>
+				)
+				(T
+					<TELL "She hangs loosely under your arm as you carry her around like a sack of potatoes."CR >
+				)
+			>
 		)
 	>
 >	
