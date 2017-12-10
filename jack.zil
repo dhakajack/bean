@@ -197,7 +197,22 @@ by Jack Welch"
 	(IN ROOMS)
 	(LDESC "A glitzy casino entirely covered in gold leaf and flashing neon. The game floor is just to the west.")
 	(EAST TO GOLF-COURSE)
-	(FLAGS LIGHTBIT)>
+	(WEST PER ENTER-CASINO)
+	(FLAGS LIGHTBIT)
+>
+	
+<ROUTINE ENTER-CASINO ()
+	<COND
+		(<IN? ,SUIT ,PLAYER>
+			<TELL "You enter the casino. Yeah!" CR>
+			<JIGS-UP "They hand you a dish rag and tell you to get to work." >
+		)
+		(T
+			<TELL "The ogre refuses to let you enter." CR>
+			<RFALSE>
+		)
+	>
+>	
 	
 <ROOM GOLF-COURSE
 	(DESC "Golf Course")
