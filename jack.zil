@@ -454,6 +454,9 @@ by Jack Welch"
 				)
 			>	
 		)
+		(<VERB? EXAMINE>
+			<TELL "The bean glows faintly. It is either magical or radioactive." CR>
+		)
 	>
 >
 	
