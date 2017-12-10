@@ -80,6 +80,13 @@ by Jack Welch"
 	>
 >
 
+<SYNTAX LICK OBJECT = V-LICK>
+<VERB-SYNONYM LICK KISS>
+
+<ROUTINE V-LICK ()
+	<TELL "How is that in the least bit a desirable thing to do?" CR>
+>
+
 <SYNTAX HELP = V-HELP>
 <VERB-SYNONYM HELP HINT HINTS ABOUT CREDITS INFO>
 
@@ -227,6 +234,9 @@ by Jack Welch"
 					<TELL "Get those geese off my lawn and we can talk about your future." CR>
 				)
 			>
+		)
+		(<VERB? LICK>
+			<TELL "Unable to resist the allure of his cheesy, powdery coating, you lick the ogre.||A putrid flavor fills you mouth. While you spit repeated to try to get the taste out of your mouth, the ogre's tiny hands rub more of the orange powder over the patch of decaying flesh that you had licked clean." CR>
 		)
 	>
 >
