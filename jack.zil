@@ -102,6 +102,13 @@ by Jack Welch"
 		)
 	>
 >
+
+<OBJECT COUNTER
+	(DESC "counter")
+	(SYNONYM COUNTER)
+	(IN PAWNSHOP)
+	(FLAGS SURFACEBIT CONTBIT NDESCBIT)
+>
 	
 <ROOM CASINO
 	(DESC "Cloud Nine Casino and Resort")
@@ -153,7 +160,7 @@ by Jack Welch"
 	(DESC "flock of geese")
 	(SYNONYM FLOCK GEESE BIRDS)
 	(IN GOLF-COURSE)
-	(DESCFCN FLOCK-DESC-F)
+	(LDESC "Some immigrant geese wander the carefully tended lawn brazenly.")
 	(ACTION FLOCK-R)
 >
 
@@ -163,26 +170,6 @@ by Jack Welch"
 	(ADJECTIVE GOOSE)
 	(IN GOLF-COURSE)
 	(FLAGS TAKEBIT)
->
-
-<ROUTINE FLOCK-DESC-F (RARG)
-	<COND 
-		(<EQUAL? .RARG ,M-OBJDESC?>
-			<RTRUE>
-		)
-		(T
-			<TELL "Some immigrant geese ">
-			<COND
-				(<IN? ,COW ,GOLF-COURSE>
-					<TELL "cluck and bristle with indignity from atop the neighboring clouds, while they keep a suspicious eye on your cow." CR>
-					<RTRUE>
-				)
-				(T
-					<TELL "wander the carefully tended lawn brazenly." CR>
-				)
-			>	
-		)
-	>
 >	
 		
 <ROUTINE FLOCK-R ()
@@ -240,6 +227,7 @@ by Jack Welch"
 			<COND
 				(<IN? ,COW ,GOLF-COURSE>
 				 	<TELL CR "Driven by the sort of blood lust that one rarely sees in cows, Bessy rips across the lawn after the geese. The geese erupt into flight and settle a short distance away on a cloud bank. From that safe harbor, they honk mockingly at Bessy, who stands at the very edge of the lawn vibrating with anger and yapping madly at them." CR>	
+					<PUTP ,FLOCK ,P?LDESC "The non-indigenous fowl cluck and bristle with indignity from atop the neighboring clouds, while they keep a suspicious eye on your cow.">
 					<MOVE ,MOM ,FARM>
 				)
 			>
@@ -260,7 +248,7 @@ by Jack Welch"
 	(DESC "your mom")
 	(SYNONYM MOM MOTHER)
 	(ADJECTIVE MY YOUR)
-	(FLAGS NARTICLEBIT POOPBIT)
+	(FLAGS NARTICLEBIT POOPBIT FEMALEBIT)
 	(FDESC "You haven't seen your mom out of her sick bed in years, but there she is carving furrows in the soil with the stub of a twisted stick, literally scratching out a meager existence.")
 	(LDESC "Your mother paces nervously, fretting about your family finances, too upset to talk.")
 	(ACTION MOM-R)
