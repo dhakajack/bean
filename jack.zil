@@ -17,7 +17,7 @@ by Jack Welch"
     <INIT-STATUS-LINE>
     <V-VERSION> <CRLF>
     <SETG HERE ,FARM>
-	<PUTP ,PLAYER ,P?LDESC "Downtrodden and grubby.">
+	<PUTP ,PLAYER ,P?ACTION ,BEAN-PLAYER-R>
     <MOVE ,PLAYER ,HERE>
     <V-LOOK>
     <MAIN-LOOP>
@@ -26,6 +26,19 @@ by Jack Welch"
 <INSERT-FILE "parser">
 
 "Objects"
+
+<ROUTINE BEAN-PLAYER-R ()
+	<COND
+		(<N==? ,PLAYER ,PRSO>
+           <RFALSE>
+		)
+		(<VERB? EXAMINE>
+			<TELL "Downtrodden and grubby, but you've got moxie." CR>
+			<RTRUE>
+		)
+	>
+	<PLAYER-F> 	;"Fall back to default handler in parser, but anything above that RTRUE'd will override. 
+>
 
 <SYNTAX TALK TO OBJECT = V-TALK>
 <SYNTAX TALK OBJECT (FIND PERSONBIT) = V-TALK>
