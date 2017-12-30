@@ -104,7 +104,7 @@ by Jack Welch"
 <VERB-SYNONYM HELP HINT HINTS ABOUT CREDITS INFO>
 
 <ROUTINE V-HELP ()
-	<TELL "This is a text adventure that I wrote while trying to get my head around ZIL one weekend in 2017.||Thanks to the folks at INFOCOM for ZIL and for that matter the Z-machine, and to Jesse McGrew for bringing ZIL back to life by creating the ZILF authoring tool." CR>
+	<TELL "This is a text adventure that I wrote while trying to get my head around ZIL one weekend in 2017.||Thanks to the folks at INFOCOM for ZIL and for that matter the Z-machine, and to Jesse McGrew for bringing ZIL back to life by creating the ZILF authoring tool.||Beta-testing credits: Lara Welch." CR>
 >
 
 <VERB-SYNONYM GIVE SELL TRADE>
@@ -459,7 +459,7 @@ by Jack Welch"
 			
 <OBJECT BEAN
 	(DESC "magic bean")
-	(SYNONYM BEAN)
+	(SYNONYM BEAN LEGUME)
 	(ADJECTIVE MAGIC)
 	(FLAGS TAKEBIT)
     (FDESC "The bean's magical aura glows dimly.")
