@@ -159,8 +159,11 @@ by Jack Welch"
 	(ACTION YAGMAR-R)
 >
 
-<ROUTINE YAGMAR-R ()
+<ROUTINE YAGMAR-R ("OPT" ARG)
 	<COND
+		(<EQUAL? .ARG ,M-WINNER>
+			<TELL "Yagmar waves off your feeble attempt at mind control and gets back to business." CR>
+		)
 		(<VERB? GIVE>
 			<COND
 				(<PRSO? ,COW>
@@ -268,8 +271,11 @@ by Jack Welch"
 	(ACTION OGRE-R)
 >
 
-<ROUTINE OGRE-R ()
+<ROUTINE OGRE-R ("OPT" ARG)
 	<COND 
+		(<EQUAL? .ARG ,M-WINNER>
+			<TELL "\"Listen, buddy,\" says the ogre a little too authoritatively, \"I'm the one who gives the orders around here.\"" CR>
+		)
 		(<VERB? GIVE>
 			<TELL "\"Keep your stinky old " D ,PRSO ", I don't want it. Germs. So sad.\"" CR>
 		)
