@@ -179,6 +179,9 @@ by Jack Welch"
 		)
 		(<VERB? EXAMINE>
 			<TELL "Seven foot four and 520 pounds. Obey." CR>
+		)
+		(<VERB? ATTACK>
+			<TELL "Yagmar plants a broad palm on your forehead and pushes you backwards from the counter, laughing." CR>
 		)	
 	>
 >
@@ -393,7 +396,7 @@ by Jack Welch"
 			>
 			<RTRUE>	
 		)
-		(<VERB? TAKE PUSH>
+		(<VERB? TAKE PUSH ATTACK>
 			<COND
 				(<IN? ,COW ,GOLF-COURSE>
 					<TELL "Now obsessed with her mortal enemies, the geese, Bessy snaps at you menacingly as you get near her. Since you value your hands, you let the murderous cow be. She growls at the birds, her rage barely contained." CR >
@@ -447,6 +450,9 @@ by Jack Welch"
 					<TELL "She hangs loosely under your arm as you carry her around like a sack of potatoes."CR >
 				)
 			>
+		)
+		(<VERB? ATTACK>
+			<TELL "You are no match for your mother's ninja skills." CR>
 		)
 	>
 >	
