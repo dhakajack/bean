@@ -32,12 +32,12 @@ by Jack Welch"
 		(<N==? ,PLAYER ,PRSO>
            <RFALSE>
 		)
-		(<VERB? EXAMINE>
+		(<AND <PRSO? PLAYER> <VERB? EXAMINE> >
 			<TELL "Downtrodden and grubby, but you've got moxie." CR>
 			<RTRUE>
 		)
 	>
-	<PLAYER-F> 	;"Fall back to default handler in parser, but anything above that RTRUE'd will override. 
+	<PLAYER-F>
 >
 
 <SYNTAX TALK TO OBJECT = V-TALK>
