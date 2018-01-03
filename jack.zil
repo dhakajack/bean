@@ -1,7 +1,7 @@
 "Jack's The Bean Stalker main file"
 
 <VERSION XZIP>
-<CONSTANT RELEASEID 1>
+<CONSTANT RELEASEID 2>
 
 "Main loop"
 
