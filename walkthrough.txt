@@ -1,0 +1,79 @@
+Walkthrough: The Bean Stalker
+
+* * * * * * * * * * * * * * * * * * * 
+NOTICE: COMPLIANT WITH FEDERAL LAW, 
+I AM REQUIRED TO PROVIDE NOTICE THAT
+THIS DOCUMENT CONTAINS INFORMATION,
+WHICH MIGHT BE CONSIDERED TO BE
+SPOILERS. 
+
+PLAYERS READING BEYOND THIS POINT ARE
+CONSIDERED TO HAVE WAIVED ALL RIGHTS
+AND EXPECTATIONS ABOUT ENTERTAINMENT
+PROVIDED BY THIS GAME AS IT RELATES TO
+THE SOLVING OF PUZZLES.
+
+THERE AREN'T A LOT OF THINGS TO DO IN 
+THIS GAME, SO THIS ISN'T A VERY LONG
+WALKTHROUGH.
+
+IF YOU HAVE PRINTED THIS WALKTHROUGH ON 
+3 X 5 INCH INDEX CARDS, TURN THIS PAGE OVER
+TO CONTINUE READING.
+
+* * * * * * * * * * * * * * * * * * * * *
+
+IF YOU PRINTED THIS ON A 3 X 5 INDEX CARD
+BUT ARE STILL ON PAGE ONE, YOU HAVE ONLY
+YOURSELF TO BLAME FOR HAVING INEXPLICABLY
+PRINTED THIS OUT IN PORTRAIT ORIENTATION.
+
+I MEAN, WHAT WERE YOU THINKING? OK, NOW
+TURN IT OVER, I GUESS.
+
+* * * * * * * * * * * * * * * * * * * * * * 
+
+FOR PEOPLE OUTSIDE THE U.S., 3 X 5 INCHES
+IS ABOUT 7.5 X 12.7 CM. IN ISO 216 TERMS, 
+ABOUT THE CLOSEST STANDARD SIZE WOULD BE 
+A7 PAPER, BUT CARD STOCK.
+
+* * * * * * * * * * * * * * * * * * * * * * 
+
+I hope that after all that build-up you won't
+be disappointed by the walkthrough itself, which
+now follows. Shortcuts are in [brackets].
+
+* get cow 			[get]
+* west 				[w]
+* sell cow 			[sell]
+* east 				[e]
+* plant bean 		[drop]
+* climb beanstalk 	[u]
+* get turd 			[get]
+* west 				[w]
+* talk ogre 		[talk]
+* east 				[e]
+* east 				[e]
+* west 				[w]
+* sell turd 		[sell]
+* east 				[e]
+* climb beanstalk 	[u]
+* drop cow 			[drop]
+* west 				[w]
+* talk ogre 		[talk]
+* east 				[e]
+* east 				[e]
+* get mom 			[get mom]
+* west				[w]
+* sell mom			[sell]
+* east 				[e]
+* west 				[w]
+* climb beanstalk 	[u]
+* west				[w]
+* talk ogre 		[talk]
+* west 				[w]
+
+This is the minimal walkthrough. In fact, I suppose
+even really need to talk to anyone, but it wouldn't 
+make much sense without a little context.
