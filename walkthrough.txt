@@ -75,7 +75,7 @@ now follows. Shortcuts are in [brackets].
 * west              [w]
 
 This is the minimal walkthrough. In fact, I suppose
-even really need to talk to the ogre, but I thought
+you don't need to talk to the ogre, but I thought
 that would be a lot less fun and might leave you
 wondering what the whole game was about. Sorry if
 that comes across as paternalistic.
