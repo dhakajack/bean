@@ -1,5 +1,5 @@
 "Jack's The Bean Stalker main file"
-;IFID = 9239F917-500A-41F4-B6A6-5E111F430C15
+;IFID = 9239F917-500A-41F4-B6A6-5E111F430C1522222
 
 <VERSION XZIP>
 <CONSTANT RELEASEID 2>
@@ -408,6 +408,7 @@ by Jack Welch"
 				(<IN? ,COW ,GOLF-COURSE>
 				 	<TELL CR "Driven by the sort of blood lust that one rarely sees in cows, Bessy rips across the lawn after the geese. The geese erupt into flight and settle a short distance away on a cloud bank. From that safe harbor, they honk mockingly at Bessy, who stands at the very edge of the lawn vibrating with anger and yapping madly at them." CR>	
 					<PUTP ,FLOCK ,P?LDESC "The non-indigenous fowl cluck and bristle with indignity from atop the neighboring clouds, while they keep a suspicious eye on your cow.">
+					<FCLEAR ,COW ,TAKEBIT> 
 					<MOVE ,MOM ,FARM>
 					<INCREMENT-SCORE 10>
 				)
