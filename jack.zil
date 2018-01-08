@@ -168,13 +168,22 @@ by Jack Welch"
 		(<VERB? GIVE>
 			<COND
 				(<PRSO? ,COW>
-					<TELL "Yagmar looks sideways at the pint-sized cow.||\"Kind of scrawny, but I'll take it. Let's see. Here, take one of these. Now scram.\"||He hands you a somewhat shriveled but vaguely magical legume." CR>
-					<REMOVE ,COW>
-					<MOVE ,BEAN ,PLAYER>
-					<INCREMENT-SCORE 10>
+					<COND 
+						(<IN? ,BEAN ,YAGMAR>
+							<TELL "Yagmar looks sideways at the pint-sized cow.||\"Kind of scrawny, but I'll take it. Let's see. Here, take one of these. Now scram.\"||He hands you a somewhat shriveled but vaguely magical legume." CR>
+							<REMOVE ,COW>
+							<MOVE ,BEAN ,PLAYER>
+							<INCREMENT-SCORE 10>
+							<RTRUE>
+						)
+						(T
+							<TELL "No, I'll never make *that* deal again. Keep it. Good riddance." CR>
+							<RTRUE>
+						)
+					>
 				)
 				(<PRSO? ,TURD>
-					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly and I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, the barbarian swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this viscious miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
+					<TELL "Yagmar squints at the ignoble lump of goose excrement on the counter and raises an eyebrow.||\"And what exactly am I supposed to do with *that*?\" he inquires, pointing towards it with an accusatory index finger.||\"It's a souvenir from the casino,\" you say, trying to sound upbeat. \"It's worth it's weight...\"||Before you can finish, the barbarian swipes the turd from his counter top and produces Bessy. \"Whatever it is, it's guaranteed to be worth more than this viscious miniature cow of yours, which eats like a horse. Here. Take it and get out of here.\"" CR >
 					<REMOVE ,TURD>
 					<MOVE ,COW ,PLAYER>
 					<INCREMENT-SCORE 10>
@@ -278,7 +287,16 @@ by Jack Welch"
 			<TELL "\"Listen, buddy,\" says the ogre a little too authoritatively, \"I'm the one who gives the orders around here.\"" CR>
 		)
 		(<VERB? GIVE>
-			<TELL "\"Keep your stinky old " D ,PRSO ", I don't want it. Germs. So sad.\"" CR>
+			<TELL "\"Keep your stinky old " D ,PRSO ", I don't want ">
+			<COND 
+				(<EQUAL? ,PRSO ,MOM>
+					<TELL "her">
+				)
+				(T
+					<TELL "it">
+				)
+			>
+			<TELL ". Germs. So sad.\"" CR>
 		)
 		(<VERB? TALK>
 			<COND
@@ -287,10 +305,11 @@ by Jack Welch"
 						(<FSET? ,SUIT ,WORNBIT>
 							<TELL "\"Hang on a minute,\" the ogre says, holding up a tiny finger as he talks into his cell phone. \"His own mother? Fantastic. Absolutely fantastic. He's here now. Talk later, Yagmar.\"||The ogre pats you on the head, leaving a orange powdery outline of his palm on your forehead. \"Just want to say, what you did, I am so, so impressed. Hugely. Impressed. You're one of us now, come right on in, just over there, to the west. See the door? To the casino? That way.\"" CR
 							>
+							<REMOVE ,OGRE>
 							<RTRUE>
 						)
 						(T
-							<TELL "\"You did well on the goose job, very, very well,\" the ogre confides with a wink. \" This might work out for you. It could be great. Tell you what, if you can show me that you can pull off the kind of deal that I would make myself, I'll not only let you into the casino, I'll hire you on the spot.\"" CR>
+							<TELL "\"You did well on the goose job, very, very well,\" the ogre confides with a wink. \"This might work out for you. It could be great. Tell you what, if you can show me that you can pull off the kind of deal that I would make myself, I'll not only let you into the casino, I'll hire you on the spot.\"" CR>
 							<RTRUE>
 						)
 					>
@@ -317,11 +336,10 @@ by Jack Welch"
 	<LTABLE
 		2
 		"You want to do something useful? See those birds over there, pooping up my lawn? My very very wonderful, amazing -- I guarantee you, this is the best lawn. I was just saying the other day, this lawn is really something else. And what happens? Geese. Geese from over the border are all over my lawn. They're not our geese, they are taking lawn away from our geese. These are terrorist, radical terrorist geese, and I won't put up with it. These geese, did you know that's one than more goose, right? Anyhow, these geese have got to go. You get rid of them, and I promise you, I promise you that I will make things make things right. Now, go do something about them"
-		"Let me give you some advice, do you want some advice? Of course you do, you're saying, I wonder what advice he has to give me, and now I'm giving it to you, so you should listen because they say my advice is the best advice. I give the best advice, because when I am telling people things ,about advice, they all say, he has the best advice. So, my advice is that you get those birds, those horrible, they're not ducks, you know. Ducks are patriotic. There are television shows about ducks, and I saw one last week, so this is not at all about ducks. Those birds are geese, and I have had it up to here, right here, with them. So, if you get rid of them, then maybe we can talk"
-		"You want to come it? It's great isn't it. The big, most expensive casino ever. Great for families. I say bring the kids on in, never too early. Because we're all about family values. But not geese. Geese don't think like you are I do, and not because they're birds. I like birds, I love birds. Just the other day, I was talking to a flock of birds down by the pool, and they were all fine and one of them was like, you really like birds, don't you, and I do, but just not geese. Say, if you want to do something useful for your old orange ogre buddy, maybe I can do a little deal-making for you, try to get you in the door. So, why not just head over there and see if you can't get rid of those geese"
+		"Let me give you some advice, do you want some advice? Of course you do, you're saying, I wonder what advice he has to give me, and now I'm giving it to you, so you should listen because they say my advice is the best advice. I give the best advice, because when I am telling people things, about advice, they all say, he has the best advice. So, my advice is that you get those birds, those horrible, they're not ducks, you know. Ducks are patriotic. There are television shows about ducks, and I saw one last week, so this is not at all about ducks. Those birds are geese, and I have had it up to here, right here, with them. So, if you get rid of them, then maybe we can talk"
+		"You want to come in? It's great isn't it. The biggest, most expensive casino ever. Great for families. I say bring the kids on in, never too early. Because we're all about family values. But not geese. Geese don't think like you are I do, and not because they're birds. I like birds, I love birds. Just the other day, I was talking to a flock of birds down by the pool, and they were all fine and one of them was like, you really like birds, don't you, and I do, but just not geese. Say, if you want to do something useful for your old orange ogre buddy, maybe I can do a little deal-making for you, try to get you in the door. So, why not just head over there and see if you can't get rid of those geese"
 	>
 >
-
 
 <OBJECT FLOCK
 	(DESC "flock of geese")
@@ -368,8 +386,14 @@ by Jack Welch"
 		)
 		(T
 			<COND
+				(<VERB? THROW-AT>
+					<TELL "The geese easily dodge and " T ,PRSO " flies past them, sails over the golf course, and disappears eastward into the clouds.||So, guess you are down one " D ,PRSO "." CR>
+					<MOVE ,PRSO ,FARM>
+					<RTRUE>
+				)
 				(<IN? ,COW ,GOLF-COURSE>
 					<TELL "Perched on an insubstantial cloud bank, the geese are safely beyond your grasp (and Bessy's slavering maw)." CR >
+					<RTRUE>
 				)
 				(T
 					<TELL "The geese flutter about clearly avoiding you." CR>
@@ -423,11 +447,15 @@ by Jack Welch"
 				)
 			>
 		)
+		(<VERB? THROW-AT>
+			<TELL "The rickety little cow sails through the air. Suddenly, it goes stiff, arches its back, thrusts out its knobby legs, and starts spinning end-over-end. A moment later, it curves around " T ,PRSI " and returns to you, like a boomerang." CR>
+			<RTRUE>
+		)
 	>
 >
 
 <OBJECT MOM
-	(DESC "your mom")
+	(DESC "mom")
 	(SYNONYM MOM MOTHER)
 	(ADJECTIVE MY YOUR)
 	(FLAGS NARTICLEBIT FEMALEBIT)
@@ -473,11 +501,16 @@ by Jack Welch"
 		(<VERB? ATTACK>
 			<TELL "You are no match for your mother's ninja skills." CR>
 		)
+		(<VERB? THROW-AT>
+			<TELL "You are out of practice. She lands no where near " T ,PRSI ", rolls on her shoulder, springs to her feet with suprising agility, and beelines back to the farm." CR>
+			<MOVE ,MOM ,FARM>
+		)
 	>
 >	
 			
 <OBJECT BEAN
 	(DESC "magic bean")
+	(LOC YAGMAR)
 	(SYNONYM BEAN LEGUME)
 	(ADJECTIVE MAGIC)
 	(FLAGS TAKEBIT)
@@ -515,7 +548,7 @@ by Jack Welch"
 	(SYNONYM BEANSTALK STALK)
 	(ADJECTIVE HUMONGOUS GREEN)
 	(FDESC "A humongous green beanstalk with broad, leathery leaves reaches up through the clouds.")
-	(LDESC "The beanstalk towers over your farm and for that matter, the town as well.||Down the road, you expect you'll be getting some angry letters from the home owner's association.")
+	(LDESC "The beanstalk towers over your farm and for that matter, the town as well.||Down the road, you expect you'll be getting some angry letters from the homeowner's association.")
 	(ACTION BEAN-STALK-R)
 >
 
@@ -533,6 +566,16 @@ by Jack Welch"
 	(ADJECTIVE FANCY BUSINESS)
 	(LDESC "A fancy business suit, sharply tailored and top quality.")
 	(FLAGS WEARBIT TAKEBIT)
+	(ACTION SUIT-R)
+>
+
+<ROUTINE SUIT-R ()
+	<COND
+		(<VERB? UNWEAR>
+			<TELL "The suit clings to you like a chincilla on a hot radiator in January." CR>
+			<RTRUE>
+		)
+	>
 >
 	
 <ROUTINE INCREMENT-SCORE (NUM)
